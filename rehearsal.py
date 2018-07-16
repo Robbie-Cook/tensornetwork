@@ -35,40 +35,37 @@ def catastrophicForgetting(network, intervention):
 Recency rehearsal (or random if random=True)
 """
 def recency(network, intervention, learned, random=False):
-    # newInstance = intervention
-    #
-    # if random:          # Random rehearsal
-    #     rand.shuffle(learned)
-    #
-    # buffer2=learned[0]
-    # buffer3=learned[0]
-    # buffer4=learned[len(learned)-1]
-    # if len(learned) >= 3:
-    #     buffer2=learned[-1]
-    #     buffer3=learned[-2]
-    #     buffer4=learned[-3]
-    #
-    #
-    # interveningDataset = [newInstance, buffer2, buffer3, buffer4]
-    # trainBuffer(network, interveningDataset)
-    pass
+    newInstance = intervention
+
+    if random:          # Random rehearsal
+        rand.shuffle(learned)
+
+    buffer2=learned[0]
+    buffer3=learned[0]
+    buffer4=learned[len(learned)-1]
+    if len(learned) >= 3:
+        buffer2=learned[-1]
+        buffer3=learned[-2]
+        buffer4=learned[-3]
+
+
+    interveningDataset = [newInstance, buffer2, buffer3, buffer4]
+    trainBuffer(network, interveningDataset, settings.maxIterations)
 """
 Random rehearsal
 """
 def random(network, intervention, learned):
-    # recency(network, intervention, learned, random=True)
-    pass
+    recency(network, intervention, learned, random=True)
 
 """
 Random pseudorehearsal
 """
 def pseudo(network, intervention, numPseudoItems):
-    # # Pseudoitems for pseudorehearsal
-    # pseudoItems = generatePseudoPairs(network, numPseudoItems)
-    # rand.shuffle(pseudoItems)
-    # buffer = [intervention, pseudoItems[-1], pseudoItems[-2], pseudoItems[-3]]
-    # trainBuffer(network, buffer)
-    pass
+    # Pseudoitems for pseudorehearsal
+    pseudoItems = generatePseudoPairs(network, numPseudoItems)
+    rand.shuffle(pseudoItems)
+    buffer = [intervention, pseudoItems[-1], pseudoItems[-2], pseudoItems[-3]]
+    trainBuffer(network, buffer)
 
 """
 Generates pseudoitem pairs (input and output) for pseudorehearsal

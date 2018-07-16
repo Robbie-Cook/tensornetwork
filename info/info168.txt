@@ -1,0 +1,6 @@
+Learning constant: 0.3
+         Momentum constant: 0.9
+         Number of layers: 2
+         Algorithm: pseudoSweep 
+         Pseudo refresh rate: 5
+         Number of repeats 10
