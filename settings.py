@@ -38,7 +38,7 @@ Options are:
 mymethod = method.pseudoSweep
 
 numPseudoItems = 128 # How many pseudoitems to generate
-bufferRefreshRate = 5 # How many epochs to train a buffer (sweep pseudorehearsal)
+bufferRefreshRate = 1 # How many epochs to train a buffer (sweep pseudorehearsal)
 
 inputNodes = 32         # Number of input neurons
 hiddenNodes = 16       # Number of hidden neurons

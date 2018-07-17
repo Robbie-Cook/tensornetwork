@@ -18,6 +18,8 @@ Argument parser for changing settings
 parser = argparse.ArgumentParser()
 parser.add_argument("--numLayers")
 parser.add_argument("--numRepeats")
+parser.add_argument("--bufferRefreshRate")
+
 args = parser.parse_args()
 
 if args.numLayers != None:
@@ -25,6 +27,9 @@ if args.numLayers != None:
 
 if args.numRepeats != None:
     settings.numRepeats = int(args.numRepeats)
+
+if args.bufferRefreshRate != None:
+    settings.bufferRefreshRate = int(args.bufferRefreshRate)
 
 """
 Open files for information
