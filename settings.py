@@ -60,8 +60,8 @@ printRate = 1000
 learningConstant = 0.3
 momentumConstant = 0.9
 errorCriterion = 0.90 # Minimum Goodness
-maxIterations = 10000
-maxInitialIterations = 20000
+maxIterations = 50000
+maxInitialIterations = 100000
 
 
 batch_size = 1
